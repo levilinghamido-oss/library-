@@ -9,7 +9,6 @@
     --border-color: rgba(255, 255, 255, 0.13);
 }
 
-/* ================= GENERAL ================= */
 * {
     box-sizing: border-box;
 }
@@ -26,13 +25,11 @@ a {
     color: inherit;
 }
 
-/* ================= HEADER ================= */
 .site-header {
     width: 100%;
     background: var(--navy);
 }
 
-/* الشريط العلوي */
 .top-bar {
     min-height: 42px;
     padding: 10px 15px;
@@ -45,7 +42,6 @@ a {
     font-size: 16px;
 }
 
-/* المنطقة الرئيسية */
 .header-main {
     width: min(1500px, 100%);
     min-height: 92px;
@@ -58,7 +54,6 @@ a {
     background: var(--navy-light);
 }
 
-/* الشعار */
 .logo {
     display: flex;
     align-items: center;
@@ -95,7 +90,6 @@ a {
     font-size: 14px;
 }
 
-/* شريط البحث */
 .search-bar {
     display: flex;
     width: 100%;
@@ -130,7 +124,6 @@ a {
     background: #ffc15b;
 }
 
-/* السلة */
 .cart {
     position: relative;
     justify-self: center;
@@ -160,7 +153,6 @@ a {
     font-weight: bold;
 }
 
-/* قائمة التنقل */
 .main-nav {
     background: var(--navy-nav);
 }
@@ -192,6 +184,170 @@ a {
     color: var(--white);
     border-bottom-color: var(--orange);
 }
+
+.categories-section {
+    padding: 45px 4% 55px;
+    background-color: #f8faff;
+    font-family: Arial, sans-serif;
+    box-sizing: border-box;
+}
+
+.categories-section * {
+    box-sizing: border-box;
+}
+
+/* Titre */
+.categories-header {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.categories-subtitle {
+    color: #f9aa2b;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.categories-header h2 {
+    color: #142747;
+    font-size: 30px;
+    margin: 10px 0;
+    font-weight: bold;
+}
+
+.categories-header p {
+    color: #68758a;
+    font-size: 15px;
+    margin: 0;
+}
+
+.categories-line {
+    width: 65px;
+    height: 4px;
+    background-color: #f9aa2b;
+    border-radius: 5px;
+    margin: 16px auto 0;
+}
+
+.categories-container {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 22px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.category-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-width: 0;
+    min-height: 235px;
+    padding: 22px 14px;
+    text-align: center;
+    text-decoration: none;
+    background-color: #ffffff;
+    border: 1px solid #e5eaf2;
+    border-radius: 12px;
+    box-shadow: 0 3px 12px rgba(20, 39, 71, 0.05);
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease,
+                border-color 0.3s ease;
+}
+
+.category-card:hover {
+    transform: translateY(-6px);
+    border-color: #f9aa2b;
+    box-shadow: 0 10px 25px rgba(20, 39, 71, 0.12);
+}
+
+.category-icon {
+    width: 100px;
+    height: 95px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 12px;
+}
+
+.category-icon img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.category-card:hover .category-icon img {
+    transform: scale(1.08);
+}
+
+.category-card h3 {
+    color: #142747;
+    font-size: 17px;
+    line-height: 1.4;
+    margin: 0 0 8px;
+}
+
+.category-card p {
+    color: #788397;
+    font-size: 13px;
+    line-height: 1.5;
+    margin: 0 0 12px;
+}
+
+.category-link {
+    color: #d98b12;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+@media (max-width: 600px) {
+    .categories-section {
+        padding: 35px 15px 40px;
+    }
+
+    .categories-header h2 {
+        font-size: 25px;
+    }
+
+    .categories-header p {
+        font-size: 13px;
+    }
+
+    .categories-container {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    .category-card {
+        min-height: 205px;
+        padding: 16px 8px;
+    }
+
+    .category-icon {
+        width: 78px;
+        height: 75px;
+    }
+
+    .category-card h3 {
+        font-size: 15px;
+    }
+
+    .category-card p {
+        font-size: 12px;
+    }
+
+    .category-link {
+        font-size: 12px;
+    }
+}
+.category-card:focus-visible {
+    outline: 3px solid #f9aa2b;
+    outline-offset: 3px;
+}
+
 .site-footer {
     width: 100%;
     background: var(--navy);
@@ -293,41 +449,6 @@ a {
     line-height: 1.6;
 }
 
-/* ================= TABLETS ================= */
-@media (max-width: 1000px) {
-    .header-main {
-        grid-template-columns: 1fr auto;
-        gap: 20px;
-    }
-
-    .search-bar {
-        grid-column: 1 / -1;
-        grid-row: 2;
-    }
-
-    .cart {
-        grid-column: 2;
-        grid-row: 1;
-    }
-
-    .nav-container {
-        justify-content: center;
-        flex-wrap: wrap;
-    }
-
-    .nav-container a {
-        min-height: 55px;
-        padding: 0 13px;
-        font-size: 15px;
-    }
-
-    .footer-container {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 40px;
-    }
-}
-
-/* ================= MOBILE ================= */
 @media (max-width: 600px) {
     .top-bar {
         font-size: 12px;
@@ -393,8 +514,6 @@ a {
         font-size: 12px;
         border-bottom-width: 3px;
     }
-
-    /* الفوتر في الهاتف */
     .footer-container {
         padding: 35px 22px;
         grid-template-columns: 1fr;
@@ -426,7 +545,6 @@ a {
     }
 }
 
-/* Section Nos meilleures ventes */
 .meilleures-ventes {
     padding: 50px 5%;
     background-color: #f8f9fc;
@@ -530,13 +648,6 @@ a {
     color: white;
 }
 
-/* Adaptation aux tablettes */
-@media (max-width: 900px) {
-    .livres-container {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 15px;
-    }
-}
 
 /* Adaptation aux téléphones */
 @media (max-width: 480px) {
@@ -565,189 +676,6 @@ a {
         font-size: 15px;
     }
 }
-
-/* ===== NOS CATÉGORIES ===== */
-
-.categories-section {
-    padding: 45px 4% 55px;
-    background-color: #f8faff;
-    font-family: Arial, sans-serif;
-    box-sizing: border-box;
-}
-
-.categories-section * {
-    box-sizing: border-box;
-}
-
-/* Titre */
-.categories-header {
-    text-align: center;
-    margin-bottom: 35px;
-}
-
-.categories-subtitle {
-    color: #f9aa2b;
-    font-size: 12px;
-    font-weight: bold;
-    letter-spacing: 2px;
-}
-
-.categories-header h2 {
-    color: #142747;
-    font-size: 30px;
-    margin: 10px 0;
-    font-weight: bold;
-}
-
-.categories-header p {
-    color: #68758a;
-    font-size: 15px;
-    margin: 0;
-}
-
-.categories-line {
-    width: 65px;
-    height: 4px;
-    background-color: #f9aa2b;
-    border-radius: 5px;
-    margin: 16px auto 0;
-}
-
-/* Grille des catégories */
-.categories-container {
-    display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 22px;
-    max-width: 1400px;
-    margin: 0 auto;
-}
-
-/* Carte */
-.category-card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-width: 0;
-    min-height: 235px;
-    padding: 22px 14px;
-    text-align: center;
-    text-decoration: none;
-    background-color: #ffffff;
-    border: 1px solid #e5eaf2;
-    border-radius: 12px;
-    box-shadow: 0 3px 12px rgba(20, 39, 71, 0.05);
-    transition: transform 0.3s ease,
-                box-shadow 0.3s ease,
-                border-color 0.3s ease;
-}
-
-.category-card:hover {
-    transform: translateY(-6px);
-    border-color: #f9aa2b;
-    box-shadow: 0 10px 25px rgba(20, 39, 71, 0.12);
-}
-
-/* Images */
-.category-icon {
-    width: 100px;
-    height: 95px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 12px;
-}
-
-.category-icon img {
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: contain;
-    transition: transform 0.3s ease;
-}
-
-.category-card:hover .category-icon img {
-    transform: scale(1.08);
-}
-
-/* Textes */
-.category-card h3 {
-    color: #142747;
-    font-size: 17px;
-    line-height: 1.4;
-    margin: 0 0 8px;
-}
-
-.category-card p {
-    color: #788397;
-    font-size: 13px;
-    line-height: 1.5;
-    margin: 0 0 12px;
-}
-
-.category-link {
-    color: #d98b12;
-    font-size: 13px;
-    font-weight: bold;
-}
-
-/* Tablettes */
-@media (max-width: 1000px) {
-    .categories-container {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 16px;
-    }
-}
-
-/* Téléphones */
-@media (max-width: 600px) {
-    .categories-section {
-        padding: 35px 15px 40px;
-    }
-
-    .categories-header h2 {
-        font-size: 25px;
-    }
-
-    .categories-header p {
-        font-size: 13px;
-    }
-
-    .categories-container {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 12px;
-    }
-
-    .category-card {
-        min-height: 205px;
-        padding: 16px 8px;
-    }
-
-    .category-icon {
-        width: 78px;
-        height: 75px;
-    }
-
-    .category-card h3 {
-        font-size: 15px;
-    }
-
-    .category-card p {
-        font-size: 12px;
-    }
-
-    .category-link {
-        font-size: 12px;
-    }
-}
-
-/* Accessibilité au clavier */
-.category-card:focus-visible {
-    outline: 3px solid #f9aa2b;
-    outline-offset: 3px;
-}
-
-
-/* ===== CORRECTION PAGE LIVRES ===== */
 
 #tous-les-livres.meilleures-ventes {
     background-color: #f8faff;
