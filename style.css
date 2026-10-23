@@ -42,17 +42,22 @@ a {
     font-size: 16px;
 }
 
+.
+
+
 .header-main {
-    width: min(1500px, 100%);
+    width: 100%;
+    max-width: 1500px;
     min-height: 92px;
     margin: auto;
     padding: 15px 25px;
     display: grid;
-    grid-template-columns: 1fr minmax(250px, 1.6fr) 0.5fr;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.6fr) minmax(0, 0.5fr);
     align-items: center;
-    gap: 35px;
+    gap: 20px;
     background: var(--navy-light);
 }
+
 
 .logo {
     display: flex;
@@ -456,13 +461,17 @@ a {
         padding: 9px 12px;
     }
 
-    .header-main {
-        padding: 18px 15px;
-        gap: 18px 10px;
-    }
-
+.header-main {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.6fr) minmax(0, 0.5fr);
+    padding: 15px 10px;
+    gap: 8px;
+    }  
     .logo {
-        gap: 8px;
+        min-width: 0;
+        gap: 6px;
+    }
+    .logo-text{
+        min-width: 0;
     }
 
     .logo-icon {
@@ -471,9 +480,9 @@ a {
         font-size: 21px;
     }
 
-    .logo-text strong {
-        font-size: 16px;
-        white-space: normal;
+   .logo-text strong {
+    font-size: 16px;
+    white-space: normal;
     }
 
     .logo-text small {
@@ -481,26 +490,31 @@ a {
     }
 
     .cart {
-        gap: 5px;
-        font-size: 14px;
+        justify-self: end;
+        min-width: 0;
+        gap: 4px;
+        font-size: 13px;
+        white-space: nowrap;
     }
-
     .cart-icon {
-        font-size: 22px;
+        font-size: 21px;
     }
-
     .search-bar {
+        width: 100%;
+        min-width: 0;
         height: 48px;
     }
 
     .search-bar input {
-        padding: 0 13px;
-        font-size: 13px;
+        min-width: 0;
+        width: 0;
+        padding: 0 8px;
+        font-size: 12px;
     }
 
     .search-bar button {
         width: 48px;
-        font-size: 25px;
+        flex-shrink: 0;
     }
 
     .nav-container {
